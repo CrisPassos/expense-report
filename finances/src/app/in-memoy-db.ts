@@ -1,4 +1,4 @@
-import { Category } from './app/pages/categories/shared/category.model';
+import { Category } from './pages/categories/shared/category.model';
 import { InMemoryDbService, httpClientInMemBackendServiceFactory } from 'angular-in-memory-web-api';
 
 export class InMemoryDatabase implements InMemoryDbService {
