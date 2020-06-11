@@ -1,7 +1,7 @@
 <nav class="mb-5">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-    <li class="breadcrumb-item"><a routerLink="/categories">Categories</a></li>
+    <li class="breadcrumb-item"><a routerLink="/entries">Entries</a></li>
     <li class="breadcrumb-item active"> {{pageTitle}}</li>
   </ol>
 </nav>
@@ -16,10 +16,10 @@
 </div>
 
 
-<form [formGroup]="categoryForm" (submit)="submitForm()">
+<form [formGroup]="entryForm" (submit)="submitForm()">
   <div class="card">
     <div class="card-header">
-      About Category
+      About Entries
     </div>
 
     <div class="card-body">
@@ -27,15 +27,20 @@
         <div class="form-group col-md-4">
           <label for="name">Name</label>
           <input type="text" class="form-control" id="name" formControlName="name">
-          <div class="text-danger" *ngIf="categoryForm.get('name').invalid && categoryForm.get('name').touched">
-            <div *ngIf="categoryForm.get('name').errors.required">Input required</div>
-            <div *ngIf="categoryForm.get('name').errors.minlength">Min lenght is 2 characteres</div>
+          <div class="text-danger" *ngIf="entryForm.get('name').invalid && entryForm.get('name').touched">
+            <div *ngIf="entryForm.get('name').errors.required">Input required</div>
+            <div *ngIf="entryForm.get('name').errors.minlength">Min lenght is 2 characteres</div>
           </div>
         </div>
 
         <div class="form-group col-md-8">
           <label for="description">Description</label>
           <input type="text" class="form-control" id="description" formControlName="description">
+        </div>
+
+        <div class="form-group col-md-8">
+          <label for="description">Type</label>
+          <input type="text" class="form-control" id="type" formControlName="type">
         </div>
 
       </div>
@@ -49,6 +54,6 @@
     </ul>
   </div>
 
-  <button [disabled]="submittingForm || categoryForm.invalid" type="submit"
+  <button [disabled]="submittingForm || entryForm.invalid" type="submit"
     class="btn btn-primary btn-lg float-right mt-3">Salvar</button>
 </form>
