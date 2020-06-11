@@ -1,5 +1,5 @@
 import { Category } from './pages/categories/shared/category.model';
-import { InMemoryDbService, httpClientInMemBackendServiceFactory } from 'angular-in-memory-web-api';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 export class InMemoryDatabase implements InMemoryDbService {
 
@@ -12,7 +12,7 @@ export class InMemoryDatabase implements InMemoryDbService {
       { id: 5, name: 'Freelas', description: 'Trabalhos com freelancher' },
     ];
 
-    return categories;
+    return { categories };
   }
 
 }
