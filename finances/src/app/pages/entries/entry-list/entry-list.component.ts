@@ -10,11 +10,11 @@ import { Entry } from '../shared/entry.model';
 export class EntryListComponent implements OnInit {
   entries: Entry[] = [];
 
-  constructor(private entryService: EntryService, ) { }
+  constructor(private entryService: EntryService,) { }
 
   ngOnInit() {
     this.entryService.getAll().subscribe(
-      response => this.entries = response,
+      response => this.entries = response.sort((a, b) => b.id - a.id),
       error => console.log(`Error ${error}`)
     );
   }
