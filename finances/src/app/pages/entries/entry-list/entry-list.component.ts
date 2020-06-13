@@ -1,33 +1,16 @@
 import { EntryService } from './../shared/entry.service';
 import { Component, OnInit } from '@angular/core';
 import { Entry } from '../shared/entry.model';
+import { BaseResourceListComponent } from 'src/app/shared/components/base-resource-list/base-resource-list.component';
 
 @Component({
   selector: 'app-entry-list',
   templateUrl: './entry-list.component.html',
   styleUrls: ['./entry-list.component.scss']
 })
-export class EntryListComponent implements OnInit {
-  entries: Entry[] = [];
+export class EntryListComponent extends BaseResourceListComponent<Entry> {
 
-  constructor(private entryService: EntryService,) { }
-
-  ngOnInit() {
-    this.entryService.getAll().subscribe(
-      response => this.entries = response.sort((a, b) => b.id - a.id),
-      error => console.log(`Error ${error}`)
-    );
+  constructor(protected entryService: EntryService) {
+    super(entryService);
   }
-
-  remove(entry: Entry) {
-    const mustDelete = confirm('You like to remove?');
-
-    if (mustDelete) {
-      this.entryService.delete(entry.id).subscribe(
-        () => this.entries = this.entries.filter(element => element !== entry),
-        error => alert('Error in remove')
-      );
-    }
-  }
-
 }
