@@ -27,7 +27,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     protected injector: Injector,
     public resource: T,
     protected resourceService: BaseResourceService<T>,
-    protected jsonDataToResourceFn: (jsonData) => T,
+    protected jsonDataToResourceFn: (jsonData: any) => T,
   ) {
 
     this.route = injector.get(ActivatedRoute);
@@ -93,6 +93,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   }
 
   protected createResource() {
+    console.log(this);
     const resource: T = this.jsonDataToResourceFn(this.resourceForm.value);
 
     this.resourceService.create(resource).subscribe(
@@ -102,6 +103,8 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   }
 
   protected updateResource() {
+
+    console.log(this);
     const resource: T = this.jsonDataToResourceFn(this.resourceForm.value);
 
     this.resourceService.update(resource).subscribe(
@@ -112,6 +115,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   }
 
   protected actionsForSuccess(resource: T) {
+    debugger
     toastr.success('Request processed successfully');
     const baseComponentPath = this.route.snapshot.parent.url[0].path;
     // load component, não colocar o histórico de navegacao para a página anterior
@@ -121,6 +125,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   }
 
   protected actionsForError(error) {
+    debugger
     toastr.error('There was an error processing your request');
     this.submittingForm = false;
 
