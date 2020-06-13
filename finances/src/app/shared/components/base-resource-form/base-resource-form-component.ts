@@ -115,7 +115,6 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   }
 
   protected actionsForSuccess(resource: T) {
-    debugger
     toastr.success('Request processed successfully');
     const baseComponentPath = this.route.snapshot.parent.url[0].path;
     // load component, não colocar o histórico de navegacao para a página anterior
@@ -125,7 +124,6 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
   }
 
   protected actionsForError(error) {
-    debugger
     toastr.error('There was an error processing your request');
     this.submittingForm = false;
 
