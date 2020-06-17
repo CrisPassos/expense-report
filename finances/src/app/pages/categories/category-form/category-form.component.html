@@ -1,14 +1,8 @@
 <app-bread-crumb [items]="[{text: 'Categories', link: '/categories'}, {text: pageTitle }]"></app-bread-crumb>
 
-<div class="row mb-4">
-  <div class="col-md-8">
-    <h1 class="h2 border-left pl-2">{{pageTitle}}</h1>
-  </div>
-  <div class="col-md">
-    <a routerLink="/categories" class="btn btn-light float-right"> Voltar </a>
-  </div>
-</div>
 
+<app-page-header button-class="btn-light" button-link="/categories" button-text="Voltar" [page-title]="pageTitle">
+</app-page-header>
 
 <form [formGroup]="resourceForm" (submit)="submitForm()">
   <div class="card">
