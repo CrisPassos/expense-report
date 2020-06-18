@@ -1,6 +1,49 @@
 # Finances
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.17.
+
+This project introduces the master / detail architecture in the angular. The project manages personal income and expenses
+
+## Install dependencies
+
+```bash
+npm i bootstrap jquery --save 
+```
+
+```bash
+npm i angular-imask --save
+```
+
+```bash
+npm i currency-formatter --save
+```
+
+```bash
+npm i moment --save
+```
+
+```bash
+npm i toastr --save
+```
+
+
+```bash
+npm install primeng --save
+```
+
+
+```bash
+npm install primeicons --save
+```
+
+
+```bash
+npm install chart.js --save
+```
+
+
+```bash
+npm i angular-in-memory-web-api --save  
+```
 
 ## Development server
 
