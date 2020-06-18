@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { FormFieldErrorComponent } from './components/form-field-error/form-field-error.component';
+import { ServerErrorMessagesComponent } from './components/server-error-messages/server-error-messages.component';
 
 
 // coisa que são compartilhadas, mas não são obrigatórias
@@ -14,6 +15,7 @@ import { FormFieldErrorComponent } from './components/form-field-error/form-fiel
     BreadCrumbComponent,
     PageHeaderComponent,
     FormFieldErrorComponent,
+    ServerErrorMessagesComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import { FormFieldErrorComponent } from './components/form-field-error/form-fiel
     BreadCrumbComponent,
     PageHeaderComponent,
     FormFieldErrorComponent,
+    ServerErrorMessagesComponent,
   ]
 })
 export class SharedModule { }
