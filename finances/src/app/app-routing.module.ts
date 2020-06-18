@@ -4,7 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 // lazyloading
 const routes: Routes = [
   { path: 'categories', loadChildren: './pages/categories/categories.module#CategoriesModule' },
-  { path: 'entries', loadChildren: './pages/entries/entries.module#EntriesModule' }
+  { path: 'entries', loadChildren: './pages/entries/entries.module#EntriesModule' },
+  { path: 'reports', loadChildren: './pages/reports/reports.module#ReportsModule' }
 ];
 
 @NgModule({
